@@ -1,0 +1,24 @@
+NCLTTR(1)                   General Commands Manual                  NCLTTR(1)
+
+NAME
+     nclttr  hide idle cursor
+
+SYNOPSIS
+     nclttr [-j jitter] [-t timeout]
+
+DESCRIPTION
+     The nclttr utility hides the cursor after no mouse activity within the
+     specified timeout (default to 5 (seconds)) and shows the cursor again
+     after it was moved.  jitter specifies a certain threshold the cursor has
+     to be moved to be shown again.
+
+EXIT STATUS
+     The nclttr utility exits0 on success, and>0 if an error occurs.
+
+SEE ALSO
+     unclutter(1), unclutter-xfixes(1)
+
+AUTHORS
+     Duncan Overbruck <mail@duncano.de>
+
+Void Linux                      April 29, 2019                      Void Linux

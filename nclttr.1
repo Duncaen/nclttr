@@ -1,0 +1,26 @@
+.Dd April 29, 2019
+.Dt NCLTTR 1
+.Os
+.Sh NAME
+.Nm nclttr
+.Nd hide idle cursor
+.Sh SYNOPSIS
+.Nm
+.Op Fl j Ar jitter
+.Op Fl t Ar timeout
+.Sh DESCRIPTION
+The
+.Nm
+utility hides the cursor after no mouse activity within the
+specified
+.Ar timeout
+(default to 5 (seconds)) and shows the cursor again after it was moved.
+.Ar jitter
+specifies a certain threshold the cursor has to be moved to be shown again.
+.Sh EXIT STATUS
+.Ex -std
+.Sh SEE ALSO
+.Xr unclutter 1 ,
+.Xr unclutter-xfixes 1
+.Sh AUTHORS
+.An Duncan Overbruck Aq Mt mail@duncano.de
