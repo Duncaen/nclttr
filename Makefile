@@ -1,4 +1,4 @@
-CFLAGS?=-g -O2 -fstack-protector-strong -D_FORTIFY_SOURCE=2 -Wall -Werror
+CFLAGS?=-g -O2 -fstack-protector-strong -D_FORTIFY_SOURCE=2 -Wall
 LDLIBS=-lX11 -lXi -lXfixes
 PROG=nclttr
 OBJS=nclttr.o
