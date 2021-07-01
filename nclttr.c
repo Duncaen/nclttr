@@ -112,16 +112,21 @@ main(int argc, char *argv[])
 		if (!hidden)
 			continue;
 		if (jitter) {
-			if (!XGetEventData(dpy, cookie))
+			if (!XGetEventData(dpy, cookie)) {
+				XFreeEventData(dpy, cookie);
 				continue;
+			}
 			if (cookie->evtype == XI_RawMotion) {
 				XIRawEvent *re;
 				re = ((XIRawEvent *)cookie->data);
 				x += re->raw_values[0];
 				y += re->raw_values[1];
-				if (x*x + y*y < jitter)
+				if (x*x + y*y < jitter) {
+					XFreeEventData(dpy, cookie);
 					continue;
+				}
 			}
+			XFreeEventData(dpy, cookie);
 		}
 		XFixesShowCursor(dpy, root);
 		hidden = 0;
